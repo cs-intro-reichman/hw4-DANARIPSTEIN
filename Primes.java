@@ -26,7 +26,9 @@ public class Primes {
             }
         }
         int presnt = (int) (100.0 * (double) count / (double) n);
-        System.out.println("There are " + count + " primes between 2 and " + n + " (" +
-                presnt + "% are primes)");
+    
+            System.out.println("There are " + count + " primes between 2 and " + n + " (" +
+             presnt + "% are primes)");
+
     }
 }
