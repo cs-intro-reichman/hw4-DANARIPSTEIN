@@ -56,7 +56,7 @@ public class ArrCharOps {
      * returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        if (isEmpatyArr(arr1) || isEmpatyArr(arr2) || (arr1.length != arr2.length))
+        if(arr1 == null || arr2 == null || arr1.length != arr2.length)
            return false;
         for (int i = 0; i < arr1.length; i++) {
             if (arr1[i] != arr2[i])
@@ -112,8 +112,12 @@ public class ArrCharOps {
      * Returns an array which is the concatanation of the two given arrays.
      */
     public static char[] concat(char[] arr1, char[] arr2) {
-        if (isEmpatyArr(arr1) || isEmpatyArr(arr2))
-            return null;
+        if (isEmpatyArr(arr1) && isEmpatyArr(arr2)) {
+            return new char[0];
+        }
+        if (isEmpatyArr(arr1)) return arr2; 
+        if (isEmpatyArr(arr2)) return arr1;
+        
         char arr3[] = new char[arr1.length + arr2.length];
         for (int i = 0; i < arr1.length; i++) {
             arr3[i] = arr1[i];
@@ -163,7 +167,7 @@ public class ArrCharOps {
             return 0;
         long count = 0;
         for (int i = 0; i < arr.length; i++) {
-            count = arr[i]*(int) Math.pow(7.0, arr.length - i - 1);
+            count =+ arr[i]*(int) Math.pow(7.0, arr.length - i - 1);
         }
         return count;
     }
