@@ -205,7 +205,7 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        if (str2 == null || str1 == null)
+        if (str2 == null || str1 == null || str1 == "" ||str2 == "")
             return -2;
         for (int i = 0; i < Math.min(str1.length(), str2.length()); i++) {
             if (str1.charAt(i) != str2.charAt(i)) {
