@@ -48,11 +48,7 @@ public class ArrCharOps {
     public static boolean isEmpatyArr(char[] arr1) {
         if (arr1 == null || arr1.length == 0) {
             return true;}
-        for (int i = 0; i < arr1.length; i++) {
-            if (arr1[i] != ' ')
-                return false;
-        }
-        return true;
+        return false;
     }
 
     /**
