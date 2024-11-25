@@ -15,7 +15,13 @@ public class MyString {
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
     }
-
+    public static boolean isEmpatyStr(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i)!=' ')
+                return false;
+        }
+        return true;
+    }
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
         // Replace the following statement with your code
