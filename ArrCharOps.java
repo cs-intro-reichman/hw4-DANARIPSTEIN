@@ -47,7 +47,8 @@ public class ArrCharOps {
     // פונקציה שבודקת אם מקבלים מערך ריק
     public static boolean isEmpatyArr(char[] arr1) {
         if (arr1 == null || arr1.length == 0) {
-            return true;}
+            return true;
+        }
         return false;
     }
 
@@ -56,8 +57,8 @@ public class ArrCharOps {
      * returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        if(arr1 == null || arr2 == null || arr1.length != arr2.length)
-           return false;
+        if (arr1 == null || arr2 == null || arr1.length != arr2.length)
+            return false;
         for (int i = 0; i < arr1.length; i++) {
             if (arr1[i] != arr2[i])
                 return false;
@@ -100,7 +101,7 @@ public class ArrCharOps {
      */
     public static int lastIndexOf(char[] arr, char ch) {
         if (isEmpatyArr(arr))
-           return -1;
+            return -1;
         for (int i = arr.length - 1; i >= 0; i--) {
             if (arr[i] == ch)
                 return i;
@@ -115,9 +116,11 @@ public class ArrCharOps {
         if (isEmpatyArr(arr1) && isEmpatyArr(arr2)) {
             return new char[0];
         }
-        if (isEmpatyArr(arr1)) return arr2; 
-        if (isEmpatyArr(arr2)) return arr1;
-        
+        if (isEmpatyArr(arr1))
+            return arr2;
+        if (isEmpatyArr(arr2))
+            return arr1;
+
         char arr3[] = new char[arr1.length + arr2.length];
         for (int i = 0; i < arr1.length; i++) {
             arr3[i] = arr1[i];
@@ -167,7 +170,7 @@ public class ArrCharOps {
             return 0;
         long count = 0;
         for (int i = 0; i < arr.length; i++) {
-            count =+ arr[i]*(int) Math.pow(7.0, arr.length - i - 1);
+            count += arr[i] * (int) Math.pow(7.0, arr.length - i - 1);
         }
         return count;
     }
@@ -202,25 +205,22 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        if (str2==null || str1==null)
+        if (str2 == null || str1 == null)
             return -2;
-            for(int i =0; i<Math.min(str1.length(),str2.length()); i++)
-            {
-                if(str1.charAt(i)!=str2.charAt(i))
-                {
-                    if(str1.charAt(i)<str2.charAt(i))
+        for (int i = 0; i < Math.min(str1.length(), str2.length()); i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
+                if (str1.charAt(i) < str2.charAt(i))
                     return -1;
-                    else return 1;
-                }
+                else
+                    return 1;
             }
-            if(str1.length()<str2.length())
-            { 
-                return -1;
-            }
-            if(str1.length()>str2.length())
-            { 
-                return 1;
-            }
+        }
+        if (str1.length() < str2.length()) {
+            return -1;
+        }
+        if (str1.length() > str2.length()) {
+            return 1;
+        }
         return 0;
     }
 }
