@@ -15,22 +15,46 @@ public class MyString {
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
     }
-    public static boolean isEmpatyStr(String str) {
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i)!=' ')
-                return false;
-        }
-        return true;
-    }
+
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        // Replace the following statement with your code
-        return null;
+        if (str == null || str. isEmpty())
+            return null;
+        int i = 0;
+        String ans = "";
+        char ch = ' ';
+        while (i < str.length()) {
+            if (64 < str.charAt(i) && str.charAt(i) < 91)
+                ch = (char) (str.charAt(i) + 32);
+            else
+                ch = (char) (str.charAt(i));
+            ans = ans + ch;
+            i++;
+        }
+        return ans;
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
-        return false;
+        if (str1 == "" || str1 == null || str2 == "" || str2 == null)
+            return false;
+        boolean contain = true;
+        str2 = lowerCase(str2);
+        str1 = lowerCase(str1);
+        int j = 0;
+        if (str1.length() < str2.length())
+            return false;
+        for (int i = 0; i < str2.length(); i++) {
+            while (j < str1.length()) {
+                if (str2.charAt(i) != str1.charAt(j))
+                    contain = false;
+                else {
+                    contain = true;
+                    break;
+                }
+                j++;
+            }
+        }
+        return contain;
     }
 }
