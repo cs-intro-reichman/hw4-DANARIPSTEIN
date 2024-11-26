@@ -19,7 +19,7 @@ public class MyString {
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
         if (str == null || str. isEmpty())
-            return null;
+            return "";
         int i = 0;
         String ans = "";
         char ch = ' ';
