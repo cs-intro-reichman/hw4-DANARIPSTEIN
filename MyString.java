@@ -41,7 +41,7 @@ public class MyString {
         if (str2 == "")
             return true;
         str1 = lowerCase(str1);
-        str1 = lowerCase(str2);
+        str2 = lowerCase(str2);
         boolean contain = true;
         int j = 0;
         if (str1.length() < str2.length())
