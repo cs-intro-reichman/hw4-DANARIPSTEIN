@@ -18,7 +18,7 @@ public class MyString {
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        if (str == null || str. isEmpty())
+        if (str == null || str.isEmpty())
             return "";
         int i = 0;
         String ans = "";
@@ -36,11 +36,11 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        if (str1 == "" || str1 == null || str2 == "" || str2 == null)
+        if (str1 == "" || str1 == null || str2 == null)
             return false;
+        if (str2 == "")
+            return true;
         boolean contain = true;
-        str2 = lowerCase(str2);
-        str1 = lowerCase(str1);
         int j = 0;
         if (str1.length() < str2.length())
             return false;
