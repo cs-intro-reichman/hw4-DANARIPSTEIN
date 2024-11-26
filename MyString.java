@@ -40,23 +40,18 @@ public class MyString {
             return false;
         if (str2 == "")
             return true;
-        str1 = lowerCase(str1);
-        str2 = lowerCase(str2);
-        boolean contain = true;
-        int j = 0;
-        if (str1.length() < str2.length())
-            return false;
-        for (int i = 0; i < str2.length(); i++) {
-            while (j < str1.length()) {
-                if (str2.charAt(i) != str1.charAt(j))
-                    contain = false;
-                else {
-                    contain = true;
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+            boolean found = true;
+            for (int j = 0; j < str2.length(); j++) {
+                if (str1.charAt(i + j) != str2.charAt(j)) {
+                    found = false;
                     break;
                 }
-                j++;
+            }
+            if (found) {
+                return true;
             }
         }
-        return contain;
+        return false;
     }
 }
